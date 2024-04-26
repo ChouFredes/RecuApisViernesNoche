@@ -3,7 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
   color: black;
 }
@@ -49,7 +50,6 @@ a {
   color: inherit; /* Heredar color de texto */
 }
 
-
 /*----------------------------- Product Cards -----------------------------*/
 
 .ps-productCard {
@@ -63,7 +63,7 @@ a {
 }
 
 .ps-productCard-img-container {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   padding: 30px 0px;
 }
 
@@ -74,23 +74,23 @@ a {
   margin-bottom: 10px;
 }
 
-.ps-productCard-details{
+.ps-productCard-details {
   display: flex;
   flex-direction: column;
   align-items: start;
   padding: 0 20px;
 }
 
-.ps-productCard-price{
+.ps-productCard-price {
   font-weight: bold;
   padding-top: 8px;
 }
 
-.ps-productCard-description{
+.ps-productCard-description {
   color: #2f2f2f;
 }
 
-.ps-productCard-actions{
+.ps-productCard-actions {
   display: flex;
   width: 100%;
   padding: 0 20px;
@@ -98,10 +98,10 @@ a {
   padding-bottom: 20px;
 }
 
-.ps-productCard-productRate{
+.ps-productCard-productRate {
   color: yellowgreen;
 }
 
-.ps-productCard-buyButton{
-  
+.ps-productCard-buyButton {
+  color: black;
 }

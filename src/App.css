@@ -83,8 +83,25 @@ a {
 
 .ps-productCard-price{
   font-weight: bold;
+  padding-top: 8px;
 }
 
 .ps-productCard-description{
   color: #2f2f2f;
+}
+
+.ps-productCard-actions{
+  display: flex;
+  width: 100%;
+  padding: 0 20px;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.ps-productCard-productRate{
+  color: yellowgreen;
+}
+
+.ps-productCard-buyButton{
+  
 }

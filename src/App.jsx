@@ -6,6 +6,7 @@ import { Contact } from "./components/pages/Contact";
 import { Home } from "./components/pages/Home";
 import {Product} from "./components/pages/Product"
 import { Products } from "./components/pages/Products";
+import { Cart } from "./components/Cart";
  
 
 export function App() {
@@ -17,7 +18,7 @@ export function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<Product />} />
-        
+        <Route path="/cart" component={Cart} />
       </Routes>
     </>
   );

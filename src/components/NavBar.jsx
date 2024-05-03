@@ -1,9 +1,17 @@
 // NavBar.js
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./css/NavBar.css";
+import { CartContext } from "../contexts/shoppingCartContext";
 
 const NavBar = () => {
+
+  const [cart, setCart] = useContext(CartContext);
+
+  const quantity = cart.reduce((acc, curr) => {
+    return acc + curr.quantity
+  }, 0);
+
   return (
     <nav className="navBar">
       <Link to="/" className="page-name">Technology House</Link>
@@ -25,7 +33,7 @@ const NavBar = () => {
         </li>
         <li>
           <Link to="/cart" className="nb-link">
-            Ver Carrito
+            Ver Carrito {quantity}
           </Link>
         </li>
       </ul>

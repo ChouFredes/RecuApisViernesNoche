@@ -1,5 +1,4 @@
-
-import { ProductCard } from "../ProductCard";
+import { ProductCard } from '../ProductCard';
 
 import React, { useState, useEffect } from 'react';
 
@@ -31,7 +30,7 @@ export const Products = () => {
   return (
     <div className="ps-productList">
       {products.map((product) => (
-        <ProductCard key={product.id} product={product}></ProductCard>
+        <ProductCard key={product.id} name={product.name} price={product.price} id={product.id} image={product.image} ></ProductCard>
       ))}
     </div>
   );

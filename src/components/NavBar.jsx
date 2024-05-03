@@ -23,6 +23,11 @@ const NavBar = () => {
             Contacto
           </Link>
         </li>
+        <li>
+          <Link to="/cart" className="nb-link">
+            Ver Carrito
+          </Link>
+        </li>
       </ul>
     </nav>
   );

@@ -1,26 +1,27 @@
-export function ProductCard() {
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./css/ProductCard.css";
+
+export function ProductCard({ product }) {
   return (
     <div className="ps-productCard">
-      <div className="ps-productCard-img-container">
-        <img
-          src="src/assets/macbookPro.png"
-          alt="Imagen del producto"
-          className="ps-productCard-img"
-        />
-      </div>
-      <div className="ps-productCard-details">
-        
-        <h3 className="ps-productCard-price">
-           $1500</h3>
-        <header className="ps-productCard-description">
-          Macbook pro 16 inches
-        </header>
-
-      </div>
+        <div className="ps-productCard-img-container">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="ps-productCard-img"
+          />
+        </div>
+        <div className="ps-productCard-details">
+          <h3 className="ps-productCard-price">${product.price}</h3>
+          <header className="ps-productCard-name">{product.name}</header>
+        </div>
 
       <div className="ps-productCard-actions">
-        <div className="ps-productCard-productRate"> 5 stars </div>
-        <button className="ps-productCard-buyButton"> Buy Item </button>
+        <Link to={`/product/${product.id}`} className="ps-productCard-moreInfo">
+          {product.rating} Ver mas
+        </Link>
+        <button className="ps-productCard-buyButton">Buy Item</button>
       </div>
     </div>
   );

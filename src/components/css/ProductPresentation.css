@@ -1,0 +1,21 @@
+.ps-productPresentation{
+    display: flex;
+    justify-content: end;
+}
+
+.ps-productPresentation-img{
+    max-width: 30%;
+    
+}
+
+.ps-productPresentation-info{
+    width: 35%;
+}
+
+.ps-productPresentation-description{
+    font-weight: lighter;
+}
+.ps-productPresentation-title{
+    font-weight: normal;
+}
+

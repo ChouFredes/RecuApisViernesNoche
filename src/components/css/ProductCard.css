@@ -1,0 +1,56 @@
+/*----------------------------- Product Cards -----------------------------*/
+
+.ps-productCard {
+    border: 1px solid hsl(0, 0% 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+    margin: 10px;
+    text-align: center;
+    max-width: 250px;
+    display: inline-block;
+  }
+  
+  .ps-productCard-img-container {
+    background-color: #f6f6f6;
+    padding: 30px 0px;
+  }
+  
+  .ps-productCard-img {
+    max-height: 200px;
+    max-width: 60%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .ps-productCard-details {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 0 20px;
+  }
+  
+  .ps-productCard-price {
+    font-weight: bold;
+    padding-top: 8px;
+  }
+  
+  .ps-productCard-name {
+    color: #2f2f2f;
+  }
+  
+  .ps-productCard-actions {
+    display: flex;
+    width: 100%;
+    padding: 0 20px;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  
+  .ps-productCard-moreInfo {
+    color: blue
+  }
+  
+  .ps-productCard-buyButton {
+    color: black;
+  }
+  

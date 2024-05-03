@@ -1,19 +1,23 @@
 import "./App.css";
-import { NavBar } from "./components/NavBar";
+import NavBar from "./components/NavBar";
 import { ProductCard } from "./components/ProductCard";
 import { Routes, Route } from "react-router-dom";
-import { Contacto } from "./components/páginas/Contacto";
-import { Inicio } from "./components/páginas/Inicio";
-import { Productos } from "./components/páginas/Productos";
+import { Contact } from "./components/pages/Contact";
+import { Home } from "./components/pages/Home";
+import {Product} from "./components/pages/Product"
+import { Products } from "./components/pages/Products";
+ 
 
 export function App() {
   return (
     <>
       <NavBar />
       <Routes>
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path="/" element={<Inicio />} />
-        <Route path="/productos" element={<Productos />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/product/:id" element={<Product />} />
+        
       </Routes>
     </>
   );

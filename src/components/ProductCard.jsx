@@ -18,7 +18,7 @@ export function ProductCard ({ name, price, id, image}) {
           }
         });
       } else {
-        return [...currItems, { id, quantity: 1, price }];
+        return [...currItems, { id, name, quantity: 1, price }];
       }
     });
   };

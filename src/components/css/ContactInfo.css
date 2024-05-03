@@ -1,0 +1,9 @@
+.social-container{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}

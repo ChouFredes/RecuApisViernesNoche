@@ -1,0 +1,40 @@
+.home-container {
+    text-align: center; /* Centrar todo el contenido */
+  }
+  
+  .section-container {
+    margin-bottom: 20px; /* Espacio entre las secciones */
+  }
+  
+  .featured-products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Para que los productos se ajusten en varias filas */
+  }
+  
+  .product-card {
+    margin: 10px; /* Espacio entre los productos */
+  }
+  
+  .testimonials {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Para que los testimonios se ajusten en varias filas */
+  }
+  
+  .testimonial-box {
+    width: 250px; /* Ancho del cuadro de testimonio */
+    padding: 20px;
+    border: 1px solid #ccc; /* Borde alrededor del cuadro de testimonio */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 10px; /* Espacio entre los cuadros de testimonios */
+  }
+  
+  .bienvenido {
+    font-weight: bold;
+    padding: 5vh;
+  }
+  .subtitle {
+    padding: 4vh;
+  }

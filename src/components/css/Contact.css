@@ -1,0 +1,7 @@
+.contact-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding-top: 5vh;
+}

@@ -1,0 +1,45 @@
+.formContainer {
+  width: 35%;
+  float: right;
+  padding: 15px;
+  background-color: #bebbbb;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formContainer input,
+.formContainer textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.formContainer button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.8em;
+}
+
+.descriptionTextarea {
+  width: 100%;
+  min-height: 100px;
+  max-height: 180px;
+  resize: none;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.5;
+}

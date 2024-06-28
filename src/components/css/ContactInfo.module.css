@@ -1,0 +1,24 @@
+.contactFooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #bebbbb;
+  box-shadow: 0 -2px 5px rgba(20, 20, 20, 0.1);
+}
+
+.socialContainer {
+  margin-top: 5px;
+}
+
+.socialIcon {
+  margin: 0 5px;
+  font-size: 20px;
+  color: #333;
+}
+
+.contactInfo {
+  margin-bottom: 5px;
+}

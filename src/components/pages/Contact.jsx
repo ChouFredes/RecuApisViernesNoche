@@ -8,7 +8,7 @@ export const Contact = () => {
   return (
     <div className="contact-container">
       <GoogleMapsMap />
-      <ContactInfo />
+
       <ContactForm />
     </div>
   );

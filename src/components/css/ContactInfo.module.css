@@ -1,11 +1,21 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#main-content {
+  flex: 1 0 auto; /* El contenido principal se expande para llenar el espacio disponible */
+}
+
 .contactFooter {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  flex-shrink: 0; /* El footer no se encoge */
+  width: 100%;
   text-align: center;
   padding: 10px 0;
-  background-color: #bebbbb;
+  background-color: #ff5722;
   box-shadow: 0 -2px 5px rgba(20, 20, 20, 0.1);
 }
 
@@ -16,9 +26,10 @@
 .socialIcon {
   margin: 0 5px;
   font-size: 20px;
-  color: #333;
+  color: white;
 }
 
 .contactInfo {
   margin-bottom: 5px;
+  color: white;
 }

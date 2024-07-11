@@ -16,7 +16,7 @@ const contactReducer = (state = initialState, action) => {
         contactForm: {
           ...state.contactForm,
           ...action.payload,
-          photos: action.payload.photos || state.contactForm.photos, // Handle photos separately to ensure immutability
+          photos: action.payload.photos || state.contactForm.photos,
         },
       };
     case "SUBMIT_FORM_SUCCESS":

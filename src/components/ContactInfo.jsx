@@ -16,7 +16,7 @@ export default function ContactInfo() {
         <br />
         Telefono: 4444-4444
       </div>
-      <div>Seguinos!</div>
+      <div className={styles.contactInfo}>Seguinos!</div>
       <div className={styles.socialContainer}>
         <a
           href="https://www.youtube.com/channel/UCJbgNz5VfETvD_wd4KiF2yQ"

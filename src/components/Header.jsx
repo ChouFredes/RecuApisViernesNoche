@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import LoginButton from "./LoginButton";
 
-import logo from "../assets/logo-with-shadow.png";
+import logo from "../assets/technologyHouse.png";
 
 const Header = () => {
   return (
     <header style={styles.header}>
       <div style={styles.topBar}>
-        <img src={logo} alt="Compra Gamer Logo" style={styles.logo} />
+        <img src={logo} alt="Technology House logo" style={styles.logo} />
         <SearchBar />
         <div style={styles.actions}>
           <LoginButton />
@@ -32,8 +32,8 @@ const Header = () => {
 
 const styles = {
   header: {
-    backgroundColor: "#fff",
-    padding: "40px 10px",
+    backgroundColor: "rgba(214, 210, 217, 0.852)",
+    padding: "20px 0px",
     boxShadow: "0 2px 2px rgba(0,0,0,0.1)",
   },
   topBar: {
@@ -54,7 +54,7 @@ const styles = {
   nav: {
     display: "flex",
     justifyContent: "center",
-    backgroundColor: "#FF5722",
+    backgroundColor: "#007BFF",
     padding: "10px 0",
   },
   navLink: {

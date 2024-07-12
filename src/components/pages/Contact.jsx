@@ -8,7 +8,6 @@ export const Contact = () => {
   return (
     <div className="contact-container">
       <GoogleMapsMap />
-
       <ContactForm />
     </div>
   );

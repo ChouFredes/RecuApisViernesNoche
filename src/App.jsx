@@ -13,7 +13,24 @@ import CustomerDashboard from "./pages/CustomerDashboard"
 import Register from "./components/Register";
 import Cart from "./components/Cart";
 import Orders from "./components/Orders";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+
 function App() {
+  const cart = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      saveCartToBackend(cart);
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [cart]);
+
   return (
     <div className="app-container">
       <Header />
@@ -39,4 +56,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

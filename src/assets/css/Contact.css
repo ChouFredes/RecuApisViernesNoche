@@ -1,7 +1,55 @@
-.contact-container{
+.cart-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-items {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart-item {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    padding-top: 5vh;
-}
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .item-details {
+    flex: 1;
+  }
+  
+  .item-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .add-button, .remove-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-button:hover, .remove-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .cart-summary {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .cart-summary h3 {
+    font-size: 1.5em;
+    margin: 0;
+  }
+  

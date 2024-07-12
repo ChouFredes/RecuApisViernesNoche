@@ -1,0 +1,28 @@
+.ps-productList {
+    padding: 20px;
+  }
+  
+  .dropdown-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .dropdown-container label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .dropdown-container select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+  
+  .ps-productGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  

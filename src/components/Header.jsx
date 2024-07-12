@@ -4,10 +4,12 @@ import { useSelector } from "react-redux";
 import SearchBar from "./SearchBar";
 import LoginButton from "./LoginButton";
 import logo from "../assets/images/technologyHouse.png";
-import userIcon from "../assets/images/userIcon.png"; // Asegúrate de tener un ícono de usuario
+import userIcon from "../assets/images/userIcon.png";
+import cartIcon from "../assets/images/cartIcon.png";
 
 const Header = () => {
   const { isLoggedIn, user } = useSelector((state) => state.auth);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   return (
     <header style={styles.header}>
@@ -16,9 +18,17 @@ const Header = () => {
         <SearchBar />
         <div style={styles.actions}>
           {isLoggedIn ? (
-            <Link to={user.role === "ADMIN" ? "/admin" : "/customer"}>
-              <img src={userIcon} alt="User Icon" style={styles.userIcon} />
-            </Link>
+            <>
+              {user.role === "CUSTOMER" && (
+                <Link to="/cart" style={styles.cartContainer}>
+                  <img src={cartIcon} alt="Cart Icon" style={styles.icon} />
+                  <span style={styles.cartBadge}>{totalQuantity}</span>
+                </Link>
+              )}
+              <Link to={user.role === "ADMIN" ? "/admin" : "/customer"}>
+                <img src={userIcon} alt="User Icon" style={styles.icon} />
+              </Link>
+            </>
           ) : (
             <LoginButton />
           )}
@@ -60,9 +70,25 @@ const styles = {
     display: "flex",
     alignItems: "center",
   },
-  userIcon: {
+  icon: {
     height: "40px",
     cursor: "pointer",
+    marginLeft: "10px",
+  },
+  cartContainer: {
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+  },
+  cartBadge: {
+    position: "absolute",
+    top: "-5px",
+    right: "-10px",
+    backgroundColor: "#FF0000",
+    color: "#FFFFFF",
+    borderRadius: "50%",
+    padding: "5px 10px",
+    fontSize: "12px",
   },
   nav: {
     display: "flex",

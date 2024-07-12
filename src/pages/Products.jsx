@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ProductCard } from '../components/ProductCard';
+import '../assets/css/Products.css';
 
 export const Products = () => {
   const [products, setProducts] = useState([]);
@@ -39,7 +40,7 @@ export const Products = () => {
 
   return (
     <div className="ps-productList">
-      <div className="dropdown-container">
+      <div className="dropdown-container" style={styles.dropdownContainer}>
         <label htmlFor="strategy">Ordenar por: </label>
         <select id="strategy" value={strategy} onChange={handleStrategyChange}>
           <option value="NONE">Todos</option>
@@ -47,15 +48,17 @@ export const Products = () => {
           <option value="MINMAX">Precio: Menor a Mayor</option>
         </select>
       </div>
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          name={product.name}
-          price={product.price}
-          id={product.id}
-          image={product.image}
-        ></ProductCard>
-      ))}
+      <div className="ps-productGrid">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            name={product.name}
+            price={product.price}
+            id={product.id}
+            b64={product.b64}
+          ></ProductCard>
+        ))}
+      </div>
     </div>
   );
 };

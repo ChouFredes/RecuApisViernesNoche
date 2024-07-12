@@ -17,12 +17,12 @@ const styles = {
   button: {
     padding: "8px 16px",
     fontSize: "14px",
-    backgroundColor: "#FF5722",
+    backgroundColor: "#007BFF",
     color: "white",
     border: "none",
     borderRadius: "4px",
     cursor: "pointer",
-    marginRight: "10px",
+    marginRight: "50px",
   },
 };
 

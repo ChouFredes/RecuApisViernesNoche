@@ -1,10 +1,11 @@
 import React from "react";
 import { ProductCard } from "../ProductCard";
 import db from "../../data/db.json";
-import testimonies from "../../data/testimony.json";
+
 import "../css/Home.css";
 import ContactInfo from "../ContactInfo";
 import foto from "../../assets/foto-home.png";
+import destacados from "../../assets/productos_destacados_transparent.png";
 
 export const Home = () => {
   const getFeaturedProducts = () => {
@@ -19,7 +20,9 @@ export const Home = () => {
         <div className="image-wrapper">
           <img src={foto} alt="Foto Home" className="centered-image" />
         </div>
-        <div className="subtitle">Productos Destacados</div>
+        <div className="productos-destacados">
+          <img src={destacados} alt="centered-image" />
+        </div>
         <div className="featured-products">
           {featuredProducts.map((product) => (
             <ProductCard

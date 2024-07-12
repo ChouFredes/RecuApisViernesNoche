@@ -4,6 +4,8 @@
   
   .section-container {
     margin-bottom: 20px; /* Espacio entre las secciones */
+    display: flex;
+    flex-direction: column;
   }
   
   .featured-products {
@@ -11,17 +13,17 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap; /* Para que los productos se ajusten en varias filas */
+    background-color: rgba(214, 210, 217, 0.852);
+    max-width: fit-content;
+    align-self: center;
+    border-radius: 25px;
+    padding: 5px;
   }
   
   .product-card {
     margin: 10px; /* Espacio entre los productos */
   }
-  
-  .testimonials {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Para que los testimonios se ajusten en varias filas */
-  }
+
   
   .testimonial-box {
     width: 250px; /* Ancho del cuadro de testimonio */
@@ -38,3 +40,16 @@
   .subtitle {
     padding: 4vh;
   }
+
+  .ps-productCard-buyButton{
+    color: #007BFF;
+  }
+
+  .ps-productCard-moreInfo{
+    color: #007BFF;
+  }
+
+.productos-destacados{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

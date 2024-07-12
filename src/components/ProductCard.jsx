@@ -58,6 +58,7 @@ export function ProductCard ({ name, price, id, image}) {
           className="ps-productCard-img"
         />
       </div>
+      <div className="ps-productCard-wrapper">
       <div className="ps-productCard-details">
         <h3 className="ps-productCard-price">${price}</h3>
         <header className="ps-productCard-name">{name}</header>
@@ -81,6 +82,7 @@ export function ProductCard ({ name, price, id, image}) {
             Quitar del carrito
           </button>
         )}
+      </div>
       </div>
     </div>
   );

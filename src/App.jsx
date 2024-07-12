@@ -6,6 +6,7 @@ import { Home } from "./components/pages/Home";
 import { Product } from "./components/pages/Product";
 import { Products } from "./components/pages/Products";
 import { Cart } from "./components/Cart";
+import { Admin } from "./components/pages/Admin";
 import { ShoppingCartProvider } from "./contexts/shoppingCartContext";
 import ContactInfo from "./components/ContactInfo";
 
@@ -21,6 +22,7 @@ export function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<Product />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </div>
         <ContactInfo />

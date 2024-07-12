@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Popup from "./Popup";
-import styles from "./css/ContactForm.module.css";
+import styles from "../assets/css/ContactForm.module.css";
 
 const ContactForm = () => {
   const dispatch = useDispatch();

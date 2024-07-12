@@ -1,30 +1,42 @@
 import "./App.css";
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
-import { Contact } from "./components/pages/Contact";
-import { Home } from "./components/pages/Home";
-import { Product } from "./components/pages/Product";
-import { Products } from "./components/pages/Products";
-import { Cart } from "./components/Cart";
-import { ShoppingCartProvider } from "./contexts/shoppingCartContext";
+import { Contact } from "./pages/Contact";
+import { Home } from "./pages/Home";
+import { Product } from "./pages/Product";
+import { Products } from "./pages/Products";
 import ContactInfo from "./components/ContactInfo";
-
-export function App() {
+import Login from "./pages/Login";
+import PrivateRoute from "./components/PrivateRoute";
+import AdminDashboard from "./pages/AdminDashboard"
+import CustomerDashboard from "./pages/CustomerDashboard"
+import Register from "./components/Register";
+import Cart from "./components/Cart";
+import Orders from "./components/Orders";
+function App() {
   return (
-    <ShoppingCartProvider>
-      <div className="app-container">
-        <Header />
-        <div className="main-content">
-          <Routes>
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/product/:id" element={<Product />} />
+    <div className="app-container">
+      <Header />
+      <div className="main-content">
+        <Routes>
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<Product />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route element={<PrivateRoute roles={['ADMIN']} />}>
+            <Route path="/admin" element={<AdminDashboard />} />
+          </Route>
+          <Route element={<PrivateRoute roles={['CUSTOMER']} />}>
+            <Route path="/customer" element={<CustomerDashboard />} />
             <Route path="/cart" element={<Cart />} />
-          </Routes>
-        </div>
-        <ContactInfo />
+            <Route path="/orders" element={<Orders />} />
+          </Route>
+        </Routes>
       </div>
-    </ShoppingCartProvider>
+      <ContactInfo />
+    </div>
   );
 }
+export default App;

@@ -6,7 +6,7 @@ import {
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import styles from "./css/ContactInfo.module.css";
+import styles from "../assets/css/ContactInfo.module.css";
 
 export default function ContactInfo() {
   return (

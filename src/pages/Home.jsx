@@ -1,11 +1,9 @@
 import React from "react";
-import { ProductCard } from "../ProductCard";
-import db from "../../data/db.json";
-
-import "../css/Home.css";
-import ContactInfo from "../ContactInfo";
-import foto from "../../assets/foto-home.png";
-import destacados from "../../assets/productos_destacados_transparent.png";
+import { ProductCard } from "../components/ProductCard";
+import db from "../assets/data/db.json"
+import "../assets/css/Home.css";
+import foto from "../assets/images/foto-home.png";
+import destacados from "../assets/images/productos_destacados_transparent.png";
 
 export const Home = () => {
   const getFeaturedProducts = () => {

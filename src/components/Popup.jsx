@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/Popup.css";
+import "../assets/css/Popup.css";
 
 const Popup = ({ message, onClose }) => {
   return (

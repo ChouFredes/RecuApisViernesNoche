@@ -1,6 +1,6 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
-import styles from "./css/SimpleMap.module.css";
+import styles from "../assets/css/SimpleMap.module.css";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 

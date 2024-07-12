@@ -1,8 +1,7 @@
 import React from "react";
-import GoogleMapsMap from "../GoogleMapsMap";
-import ContactInfo from "../ContactInfo";
-import "../css/Contact.css";
-import ContactForm from "../ContactForm";
+import GoogleMapsMap from "../components/GoogleMapsMap";
+import "../assets/css/Contact.css";
+import ContactForm from "../components/ContactForm";
 
 export const Contact = () => {
   return (

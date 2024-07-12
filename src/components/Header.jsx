@@ -1,18 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import SearchBar from "./SearchBar";
 import LoginButton from "./LoginButton";
-
-import logo from "../assets/technologyHouse.png";
+import logo from "../assets/images/technologyHouse.png";
+import userIcon from "../assets/images/userIcon.png"; // Asegúrate de tener un ícono de usuario
 
 const Header = () => {
+  const { isLoggedIn, user } = useSelector((state) => state.auth);
+
   return (
     <header style={styles.header}>
       <div style={styles.topBar}>
         <img src={logo} alt="Technology House logo" style={styles.logo} />
         <SearchBar />
         <div style={styles.actions}>
-          <LoginButton />
+          {isLoggedIn ? (
+            <Link to={user.role === "ADMIN" ? "/admin" : "/customer"}>
+              <img src={userIcon} alt="User Icon" style={styles.userIcon} />
+            </Link>
+          ) : (
+            <LoginButton />
+          )}
         </div>
       </div>
       <nav style={styles.nav}>
@@ -50,6 +59,10 @@ const styles = {
   actions: {
     display: "flex",
     alignItems: "center",
+  },
+  userIcon: {
+    height: "40px",
+    cursor: "pointer",
   },
   nav: {
     display: "flex",

@@ -1,15 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LoginButton = () => {
-  const handleLogin = () => {
-    // Implementa la lógica de inicio de sesión aquí
-    console.log("Iniciar sesión");
-  };
-
   return (
-    <button onClick={handleLogin} style={styles.button}>
-      INICIAR SESIÓN
-    </button>
+    <Link to="/login" style={styles.link}>
+      <button style={styles.button}>
+        INICIAR SESIÓN
+      </button>
+    </Link>
   );
 };
 
@@ -22,7 +20,9 @@ const styles = {
     border: "none",
     borderRadius: "4px",
     cursor: "pointer",
-    marginRight: "50px",
+  },
+  link: {
+    textDecoration: "none",
   },
 };
 

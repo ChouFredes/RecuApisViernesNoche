@@ -6,7 +6,6 @@ import { CartContext } from "../contexts/shoppingCartContext";
 
 const NavBar = () => {
 
-  const [cart, setCart] = useContext(CartContext);
 
   const quantity = cart.reduce((acc, curr) => {
     return acc + curr.quantity
@@ -29,11 +28,6 @@ const NavBar = () => {
         <li>
           <Link to="/contact" className="nb-link">
             Contacto
-          </Link>
-        </li>
-        <li>
-          <Link to="/cart" className="nb-link">
-            Ver Carrito {quantity}
           </Link>
         </li>
       </ul>

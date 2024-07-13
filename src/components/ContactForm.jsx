@@ -1,16 +1,17 @@
-import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Popup from "./Popup";
+import {
+  updateContactForm,
+  submitFormSuccess,
+  resetFormSubmission,
+} from "../redux/slices/contactSlice";
 import styles from "../assets/css/ContactForm.module.css";
+import { useState, useRef } from "react";
 
 const ContactForm = () => {
   const dispatch = useDispatch();
   const contactForm = useSelector((state) => state.contact.contactForm);
   const formSubmitted = useSelector((state) => state.contact.formSubmitted);
-
   const [errors, setErrors] = useState({});
-  const [showPopup, setShowPopup] = useState(false);
-
   const fileInputRef = useRef(null);
 
   const validate = () => {
@@ -27,10 +28,7 @@ const ContactForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    dispatch({
-      type: "UPDATE_CONTACT_FORM",
-      payload: { [name]: value },
-    });
+    dispatch(updateContactForm({ [name]: value }));
   };
 
   const handleFileChange = (e) => {
@@ -42,19 +40,15 @@ const ContactForm = () => {
       lastModifiedDate: file.lastModifiedDate.toString(),
     }));
 
-    dispatch({
-      type: "UPDATE_CONTACT_FORM",
-      payload: { photos: files },
-    });
+    dispatch(updateContactForm({ photos: files }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      dispatch({ type: "SUBMIT_FORM_SUCCESS" });
-      setShowPopup(true);
+      dispatch(submitFormSuccess());
 
-      dispatch({ type: "RESET_FORM_SUBMISSION" });
+      dispatch(resetFormSubmission());
 
       if (fileInputRef.current) {
         fileInputRef.current.value = null;
@@ -62,15 +56,8 @@ const ContactForm = () => {
     }
   };
 
-  const handleClosePopup = () => {
-    setShowPopup(false);
-  };
-
   return (
     <div className={styles.formContainer}>
-      {showPopup && (
-        <Popup message="Mensaje enviado con éxito" onClose={handleClosePopup} />
-      )}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Nombre y Apellido:</label>

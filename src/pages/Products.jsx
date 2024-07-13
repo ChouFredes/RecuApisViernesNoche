@@ -4,17 +4,45 @@ import '../assets/css/Products.css';
 
 export const Products = () => {
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('');
   const [error, setError] = useState(null);
-  const [strategy, setStrategy] = useState('NONE'); // Estado para la estrategia de ordenamiento
+  const [strategy, setStrategy] = useState('NONE');
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await fetch('http://localhost:8080/api/categories', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+          },
+        });
+        if (!response.ok) {
+          throw new Error('Error al obtener las categorías');
+        }
+        const data = await response.json();
+        setCategories(data);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+
+    fetchCategories();
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:8080/api/products/sortedBy/${strategy}`, {
+        const categoryQuery = selectedCategory ? `getByCategory/${selectedCategory}` : `sortedBy/${strategy}`;
+        const response = await fetch(`http://localhost:8080/api/products/${categoryQuery}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
           },
         });
         if (!response.ok) {
@@ -28,10 +56,14 @@ export const Products = () => {
     };
 
     fetchData();
-  }, [strategy]); // Vuelve a ejecutar el fetchData cuando cambie la estrategia
+  }, [selectedCategory, strategy]);
 
   const handleStrategyChange = (event) => {
     setStrategy(event.target.value);
+  };
+
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
   };
 
   if (error) {
@@ -40,6 +72,15 @@ export const Products = () => {
 
   return (
     <div className="ps-productList">
+      <div className="dropdown-container" style={styles.dropdownContainer}>
+        <label htmlFor="category">Filtrar por categoría: </label>
+        <select id="category" value={selectedCategory} onChange={handleCategoryChange}>
+          <option value="">Todas</option>
+          {categories.map((category) => (
+            <option key={category.id} value={category.id}>{category.name}</option>
+          ))}
+        </select>
+      </div>
       <div className="dropdown-container" style={styles.dropdownContainer}>
         <label htmlFor="strategy">Ordenar por: </label>
         <select id="strategy" value={strategy} onChange={handleStrategyChange}>

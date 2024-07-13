@@ -10,9 +10,6 @@ export function ProductPresentation({product}) {
                 <h2 className="ps-productPresentation-description"> {product.description} </h2>
                 <button> Agregar al carrito </button>
             </aside>
-
-
-
         </div>
     )
 }
